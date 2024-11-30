@@ -15,11 +15,6 @@ def getEnv():
 
         norm = (avg_brightness / 255) * 100
 
-        cv.imshow("Captured Frame", frame)
-        cv.waitKey(1000)
-
         cap.release()
         return norm
 
-
-print("Average Brightness: " + str(getEnv()))

@@ -1,0 +1,1 @@
+1. need to install screen-brightness-control before starting

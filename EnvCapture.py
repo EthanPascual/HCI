@@ -12,8 +12,14 @@ def getEnv():
         lab = cv.cvtColor(frame, cv.COLOR_BGR2LAB)
         light_channel = lab[:,:,0]
         avg_brightness = np.mean(light_channel)
+
+        norm = (avg_brightness / 255) * 100
+
+        cv.imshow("Captured Frame", frame)
+        cv.waitKey(1000)
+
         cap.release()
-        return avg_brightness
+        return norm
 
 
 print("Average Brightness: " + str(getEnv()))

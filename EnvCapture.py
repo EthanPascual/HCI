@@ -24,6 +24,8 @@ def getEnv():
 def getTask():
     window = win32gui.GetForegroundWindow()
     _, pid = win32process.GetWindowThreadProcessId(window)
+    if pid <= 0:
+        return "none"
     process = psutil.Process(pid)
     print(f"Process: {process.name().lower()}")
     return process.name().lower()
